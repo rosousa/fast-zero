@@ -11,9 +11,9 @@ def test_root_deve_retornar_200_e_ola_mundo():
     assert response.json() == {'message': 'Olá Mundo!'}
 
 
-def test_create_user():
+def test_create_user(client):
     response = client.post(
-        '/users/',
+        '/users',
         json={
             'username': 'alice',
             'email': 'alice@example.com',
